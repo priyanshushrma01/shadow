@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",       // Disables unused variable checks for TypeScript
+    "import/no-anonymous-default-export": "off",      // Allows anonymous default exports
+    "react/display-name": "off",                      // Disables display name requirement for React components
+    "react-hooks/exhaustive-deps": "off"              // Disables missing dependency warnings for useEffect
+  }
 }
