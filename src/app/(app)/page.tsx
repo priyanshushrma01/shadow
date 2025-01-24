@@ -2,47 +2,49 @@
 import { Mail } from 'lucide-react'; // Assuming you have an icon for messages
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Autoplay from 'embla-carousel-autoplay';
-import messages from '@/messages.json';
 
 import {
   Carousel,
   CarouselContent,
   CarouselItem
 } from '@/components/ui/carousel';
+import { Button } from '@/components/ui/button';
+
+const messages = [
+  { title: "Anonymous Feedback", content: "Great platform for honest opinions!", received: "2 days ago" },
+  { title: "Secret Message", content: "I love the privacy this app provides.", received: "1 day ago" },
+  { title: "Hidden Thoughts", content: "Finally, a place to share without fear.", received: "3 hours ago" },
+]
 
 export default function Home() {
   return (
     <>
       {/* Main content */}
-      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white h-screen">
-        <section className="text-center mb-8 md:mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold">
+      <main className="min-h-screen bg-[#1a1f2c]">
+      <section className="container mx-auto px-4 py-16 md:py-24">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
             Dive into the World of Anonymous Feedback
           </h1>
-          <p className="mt-3 md:mt-4 text-base md:text-lg">
-            Shadow - Where your identity remains a secret.
-          </p>
-        </section>
+          <p className="text-xl text-gray-400">Shadow - Where your identity remains a secret.</p>
+        </div>
+      </section>
 
-        {/* Carousel for Messages */}
-        <Carousel
-          plugins={[Autoplay({ delay: 2000 })]}
-          className="w-full max-w-lg md:max-w-xl"
-        >
+        {/* Carousel Section */}
+      <section className="container mx-auto px-4 py-10">
+        <Carousel plugins={[Autoplay({ delay: 2000 })]} className="w-full max-w-lg md:max-w-xl mx-auto">
           <CarouselContent>
             {messages.map((message, index) => (
               <CarouselItem key={index} className="p-4">
-                <Card>
+                <Card className="bg-[#2d3748] border-gray-800">
                   <CardHeader>
-                    <CardTitle>{message.title}</CardTitle>
+                    <CardTitle className="text-white">{message.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col md:flex-row items-start space-y-2 md:space-y-0 md:space-x-4">
-                    <Mail className="flex-shrink-0" />
+                    <Mail className="flex-shrink-0 text-gray-400" />
                     <div>
-                      <p>{message.content}</p>
-                      <p className="text-xs text-muted-foreground">
-                        {message.received}
-                      </p>
+                      <p className="text-gray-300">{message.content}</p>
+                      <p className="text-xs text-gray-500">{message.received}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -50,11 +52,14 @@ export default function Home() {
             ))}
           </CarouselContent>
         </Carousel>
+      </section>
       </main>
 
       
-      <footer className="text-center p-4 md:p-6 bg-gray-900 text-white ">
-        © 2023 Shadow. All rights reserved.
+      <footer className="border-t border-gray-800  bg-[#1a1f2c]">
+        <div className="container mx-auto px-4 py-8">
+          <p className="text-center text-gray-500">© {new Date().getFullYear()} Shadow. All rights reserved.</p>
+        </div>
       </footer>
     </>
   );
