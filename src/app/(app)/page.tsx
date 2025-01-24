@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
         {/* Carousel Section */}
-      <section className="container mx-auto px-4 py-10">
+      <section className="container mx-auto px-4">
         <Carousel plugins={[Autoplay({ delay: 2000 })]} className="w-full max-w-lg md:max-w-xl mx-auto">
           <CarouselContent>
             {messages.map((message, index) => (
