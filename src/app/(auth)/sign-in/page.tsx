@@ -68,7 +68,7 @@ export default function SignInForm() {
         </p>
           <br/>
             <div className="border-4 border-red-500 text-red-600 bg-red-100 p-4 rounded-lg font-semibold">
-              If you face further errors on the next page, refresh to continue seamlessly!
+              If you encounter any errors on the next page, simply refresh to continue smoothly.
             </div>
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             Welcome Back to Shadow
